@@ -1,3 +1,7 @@
+image:: https://travis-ci.org/loganhenson/firstdata.svg?branch=1.0.0
+    :alt: Build status
+    :target: https://travis-ci.org/loganhenson/firstdata
+
 ## loganhenson/firstdata
 
 ## Install
