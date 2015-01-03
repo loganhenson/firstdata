@@ -19,11 +19,6 @@ class SearchSpec extends ObjectBehavior
         $this->getTransactions()->shouldBeArray();
     }
 
-    function it_can_get_transactions_accurately(){
-        $this->beConstructedWith(getenv('fd_username'), getenv('fd_password'), true);
-        $this->getTransactions()[0]['Cardholder Name']->shouldBeLike('Logan Henson');
-    }
-
     function it_should_throw_informative_error_exception(){
         $this->beConstructedWith("invalid", "invalid", true);
         $this->shouldThrow('\FirstData\FirstDataException')->during('getTransactions');
