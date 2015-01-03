@@ -1,5 +1,6 @@
 {
     "name": "loganhenson/firstdata",
+    "license":      "MIT",
     "description": "FirstData API Wrapper",
     "authors": [
         {
