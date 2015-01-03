@@ -10,6 +10,7 @@ before_script:
 
 install:
   - composer install
+  - composer dump-autoload -o
 
 script:
   - vendor/bin/phpspec run -v
