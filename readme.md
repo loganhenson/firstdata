@@ -1,6 +1,6 @@
-image:: https://travis-ci.org/loganhenson/firstdata.svg?branch=1.0.0
-    :alt: Build status
-    :target: https://travis-ci.org/loganhenson/firstdata
+[![Build Status](https://travis-ci.org/loganhenson/firstdata.svg?branch=master)](https://travis-ci.org/loganhenson/firstdata) 
+
+[![Code Climate](https://codeclimate.com/github/loganhenson/firstdata/badges/gpa.svg)](https://codeclimate.com/github/loganhenson/firstdata)
 
 ## loganhenson/firstdata
 
@@ -114,4 +114,4 @@ try{
  Expiry Date: Any future date.
 
 >Diners Club	36438999960016	
- Expiry Date: Any future date.
+ Expiry Date: Any future date.om
