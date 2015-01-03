@@ -1,0 +1,29 @@
+{
+    "name": "loganhenson/firstdata",
+    "description": "FirstData API Wrapper",
+    "version": "1.0",
+    "authors": [
+        {
+            "name": "Logan Henson",
+            "email": "logan@loganhenson.com"
+        }
+    ],
+    "autoload": {
+      "psr-4": {
+        "FirstData\\": "src/"
+      }
+    },
+    "autoload-dev": {
+      "files": [
+        "providers/env.php"
+      ]
+    },
+    "require-dev": {
+      "phpspec/phpspec": "~2.0",
+      "vlucas/phpdotenv": "~1.1"
+    },
+    "require": {
+      "guzzlehttp/guzzle": "~5.0",
+        "league/csv": "~6.2"
+    }
+}
