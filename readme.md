@@ -2,13 +2,15 @@
 
 [![Code Climate](https://codeclimate.com/github/loganhenson/firstdata/badges/gpa.svg)](https://codeclimate.com/github/loganhenson/firstdata)
 
-## loganhenson/firstdata
+## First Data API v14
 
 ## Install
 
 ```
 composer require loganhenson/firstdata
 ```
+
+## Info/API
 
 [Transaction API Reference](https://firstdata.zendesk.com/entries/407571-First-Data-Global-Gateway-e4-Web-Service-API-Reference-Guide#4)
 
