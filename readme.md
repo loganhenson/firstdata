@@ -36,18 +36,34 @@ try{
 
 ```
 
-## Late Purchase
+## Pre Authenticate
 
 ```php
 <?php
 
 $Transaction = new Transaction(getenv('fd_gateway_id'), getenv('fd_gateway_password'), getenv('fd_key_id'), getenv('fd_key'));
 try{
-	$response = $Transaction->PreAuth('Mastercard', 'Logan Henson', 5500000000000004, '1216', 120);
-	$latePurchaseResponse = $Transaction->LatePurchase('Mastercard', 'Logan Henson', $response['transarmor_token'], '1216', 120)
+	$response = $Transaction->PreAuth('Mastercard', 'Logan Henson', 5500000000000004, '1216');
+	// store the $response['transarmor_token']
 }catch(FirstDataException $e){
 	echo $e->getMessage();
 }
+```
+
+## Late Purchase (requires transarmor_token from pre authentication)
+
+```php
+<?php
+
+// get the transarmor_token from data storage
+
+$Transaction = new Transaction(getenv('fd_gateway_id'), getenv('fd_gateway_password'), getenv('fd_key_id'), getenv('fd_key'));
+try{
+	$latePurchaseResponse = $Transaction->LatePurchase('Mastercard', 'Logan Henson', $response['transarmor_token'], '1216', 120);
+}catch(FirstDataException $e){
+	echo $e->getMessage();
+}
+```
 
 ```
 
