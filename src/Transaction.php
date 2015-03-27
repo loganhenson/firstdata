@@ -183,6 +183,7 @@ class Transaction{
                     'Authorization' => 'GGE4_API ' . $this->key_id . ':' . $hmac
                 ]
             ]);
+
         }catch(ClientException $e){
             throw new FirstDataException($e->getResponse()->getBody());
         }catch(ServerException $e){

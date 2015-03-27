@@ -57,4 +57,9 @@ class TransactionSpec extends ObjectBehavior
         $this->shouldThrow('\FirstData\FirstDataException')->during('setCurrency', ["EURO"]);
     }
 
+    function it_throws_on_invalid_credit_card_number(){
+        $this->beConstructedWith(getenv('fd_gateway_id'), getenv('fd_gateway_password'), getenv('fd_key_id'), getenv('fd_key'), true);
+        $this->shouldThrow('\FirstData\FirstDataException')->during('Purchase', ['Mastercard', 'Logan Henson', 5500000000400004, '1216', 120]);
+    }
+
 }
