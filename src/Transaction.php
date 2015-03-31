@@ -184,6 +184,14 @@ class Transaction{
                 ]
             ]);
 
+            /**
+             * Check bank message
+             */
+            $bank_message = $response->json()['bank_message'];
+            if($bank_message !== 'Approved') {
+                throw new FirstDataException($bank_message);
+            }
+
         }catch(ClientException $e){
             throw new FirstDataException($e->getResponse()->getBody());
         }catch(ServerException $e){
