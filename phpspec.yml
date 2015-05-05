@@ -1,0 +1,6 @@
+suites:
+    test_suite:
+        namespace: FirstData
+        psr4_prefix: FirstData
+
+stop_on_failure: true
