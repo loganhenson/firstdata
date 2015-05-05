@@ -172,7 +172,8 @@ class Transaction{
 
         try{
             //all values must be strings and separated by newline character
-            $content = array_map('strval', $this->request);
+            //also trim to remove null chars
+            $content = array_map('trim', array_map('strval', $this->request));
             $hash_data_parts = ['POST', 'application/json', sha1(json_encode($content)), $this->date, $this->version];
             $hash_data = implode("\n", $hash_data_parts);
             $hmac = base64_encode(hash_hmac('sha1', $hash_data, $this->key, true));

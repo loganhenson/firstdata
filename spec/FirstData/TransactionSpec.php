@@ -40,10 +40,10 @@ class TransactionSpec extends ObjectBehavior
 
     function it_can_late_purchase(){
         $Transaction = new Transaction(getenv('fd_gateway_id'), getenv('fd_gateway_password'), getenv('fd_key_id'), getenv('fd_key'), true);
-        $transarmor_token = $Transaction->PreAuth('Mastercard', 'Logan Henson', 5500000000000004, '1216', 120)['transarmor_token'];
+        $transarmor_token = $Transaction->PreAuth('American Express', 'Nathan R Mickler', '340000000000009', '1219', '0')['transarmor_token'];
 
         $this->beConstructedWith(getenv('fd_gateway_id'), getenv('fd_gateway_password'), getenv('fd_key_id'), getenv('fd_key'), true);
-        $this->LatePurchase('Mastercard', 'Logan Henson', $transarmor_token, '1216', 120)['bank_resp_code']->shouldBeLike("100");
+        $this->LatePurchase('American Express', 'Logan Henson', $transarmor_token, '1216', 120)['bank_resp_code']->shouldBeLike("100");
     }
 
     function it_can_change_currency(){
