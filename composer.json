@@ -1,6 +1,6 @@
 {
     "name": "loganhenson/firstdata",
-    "license":      "MIT",
+    "license": "MIT",
     "description": "FirstData API Wrapper",
     "authors": [
         {
@@ -10,7 +10,7 @@
     ],
     "autoload": {
       "psr-4": {
-        "FirstData\\": "src/"
+        "FirstData\\": "src"
       }
     },
     "autoload-dev": {
@@ -24,6 +24,6 @@
     },
     "require": {
       "guzzlehttp/guzzle": "~5.0",
-        "league/csv": "~6.2"
+      "league/csv": "~6.2"
     }
 }

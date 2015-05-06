@@ -94,52 +94,63 @@ class Transaction{
         ));
     }
 
-    public function Purchase($credit_card_type, $cardholderName, $credit_card_number, $credit_card_expiry, $amount){
+    private function setCVDCode($cvd_code){
+        $this->request = array_merge($this->request, array(
+            'cvd_presence_ind' => 1,
+            'cvd_code' => $cvd_code
+        ));
+    }
+
+    public function Purchase($credit_card_type, $cardholderName, $credit_card_number, $credit_card_expiry, $cvd_code, $amount){
 
         $this->setTransactionType("00");
         $this->setCreditCardType($credit_card_type);
         $this->setCardholderName($cardholderName);
         $this->setCreditCardNumber($credit_card_number);
         $this->setCreditCardExpiry($credit_card_expiry);
+        $this->setCVDCode($cvd_code);
         $this->setAmount($amount);
 
         return $this->send();
 
     }
 
-    public function LatePurchase($credit_card_type, $cardholderName, $transarmor_token, $credit_card_expiry, $amount){
+    public function LatePurchase($credit_card_type, $cardholderName, $transarmor_token, $credit_card_expiry, $cvd_code, $amount){
 
         $this->setTransactionType("00");
         $this->setCreditCardType($credit_card_type);
         $this->setCardholderName($cardholderName);
         $this->setTransarmorToken($transarmor_token);
         $this->setCreditCardExpiry($credit_card_expiry);
+        $this->setCVDCode($cvd_code);
         $this->setAmount($amount);
 
         return $this->send();
 
     }
 
-    public function PreAuth($credit_card_type, $cardholderName, $credit_card_number, $credit_card_expiry){
+    public function PreAuth($credit_card_type, $cardholderName, $credit_card_number, $credit_card_expiry, $cvd_code){
 
         $this->setTransactionType("01");
         $this->setCreditCardType($credit_card_type);
         $this->setCardholderName($cardholderName);
         $this->setCreditCardNumber($credit_card_number);
         $this->setCreditCardExpiry($credit_card_expiry);
+        $this->setCVDCode($cvd_code);
         $this->setAmount(0);
 
         return $this->send();
 
     }
 
-    public function Refund($credit_card_type, $cardholderName, $transarmor_token, $credit_card_expiry, $amount){
+    public function Refund($credit_card_type, $cardholderName, $transarmor_token, $credit_card_expiry, $cvd_code, $amount){
 
         $this->setTransactionType("04");
         $this->setCreditCardType($credit_card_type);
         $this->setCardholderName($cardholderName);
         $this->setTransarmorToken($transarmor_token);
         $this->setCreditCardExpiry($credit_card_expiry);
+        $this->setCVDCode($cvd_code);
         $this->setAmount($amount);
 
         return $this->send();
