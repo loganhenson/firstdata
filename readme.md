@@ -29,7 +29,7 @@ composer require loganhenson/firstdata
 
 $Transaction = new Transaction(getenv('fd_gateway_id'), getenv('fd_gateway_password'), getenv('fd_key_id'), getenv('fd_key'));
 try{
-	$response = $Transaction->Purchase('Mastercard', 'Logan Henson', 5500000000000004, '1216', 120);
+	$response = $Transaction->Purchase('Mastercard', 'Logan Henson', 5500000000000004, 1216, 123, 120);
 }catch(FirstDataException $e){
 	echo $e->getMessage();
 }
@@ -43,7 +43,7 @@ try{
 
 $Transaction = new Transaction(getenv('fd_gateway_id'), getenv('fd_gateway_password'), getenv('fd_key_id'), getenv('fd_key'));
 try{
-	$response = $Transaction->PreAuth('Mastercard', 'Logan Henson', 5500000000000004, '1216');
+	$response = $Transaction->PreAuth('Mastercard', 'Logan Henson', 5500000000000004, 123, 1216);
 	// store the $response['transarmor_token']
 }catch(FirstDataException $e){
 	echo $e->getMessage();
@@ -59,7 +59,7 @@ try{
 
 $Transaction = new Transaction(getenv('fd_gateway_id'), getenv('fd_gateway_password'), getenv('fd_key_id'), getenv('fd_key'));
 try{
-	$latePurchaseResponse = $Transaction->LatePurchase('Mastercard', 'Logan Henson', $response['transarmor_token'], '1216', 120);
+	$latePurchaseResponse = $Transaction->LatePurchase('Mastercard', 'Logan Henson', $response['transarmor_token'], 1216, 123, 120);
 }catch(FirstDataException $e){
 	echo $e->getMessage();
 }
@@ -74,7 +74,7 @@ try{
 
 $Transaction = new Transaction(getenv('fd_gateway_id'), getenv('fd_gateway_password'), getenv('fd_key_id'), getenv('fd_key'));
 try{
-	$response = $Transaction->Refund('Mastercard', 'Logan Henson', $transarmor_token, '1216', 120);
+	$response = $Transaction->Refund('Mastercard', 'Logan Henson', $transarmor_token, 1216, 123, 120);
 }catch(FirstDataException $e){
 	echo $e->getMessage();
 }
@@ -93,7 +93,7 @@ try{
 $Transaction = new Transaction(getenv('fd_gateway_id'), getenv('fd_gateway_password'), getenv('fd_key_id'), getenv('fd_key'));
 try{
     $Transaction->setCurrency('CAD');
-	$response = $Transaction->Purchase('Mastercard', 'Logan Henson', 5500000000000004, '1216', 120);
+	$response = $Transaction->Purchase('Mastercard', 'Logan Henson', 5500000000000004, 1216, 123, 120);
 }catch(FirstDataException $e){
 	echo $e->getMessage();
 }
